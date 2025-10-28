@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CatalogoFilmes.Models.Filme>
+
+@{
+    ViewData["Title"] = "Catálogo de Filmes";
+}
+
+<style>
+    .movie-card { transition: transform .2s; height: 100%; display: flex; flex-direction: column; }
+    .movie-card:hover { transform: scale(1.05); }
+    .card-img-top { width: 100%; height: 450px; object-fit: cover; }
+    .card-body { flex-grow: 1; }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">🎬 Catálogo de Filmes</h1>
+</div>
+
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var filme in Model)
+            {
+                <div class="col">
+                    <div class="card movie-card shadow-sm">
+                        <img src="@(filme.Poster ?? "/images/placeholder.png")" class="card-img-top" alt="Pôster do filme @filme.Titulo">
+                        <div class="card-body">
+                            <h5 class="card-title">@filme.Titulo</h5>
+                            <p class="card-text text-muted">@filme.AnoLancamento • @filme.Diretor</p>
+                            <p class="card-text">
+                                @(filme.Sinopse.Length > 100 ? filme.Sinopse.Substring(0, 100) + "..." : filme.Sinopse)
+                            </p>
+                            <a href="#" class="btn btn-primary mt-auto">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p class="text-center">Nenhum filme encontrado no catálogo.</p>
+            </div>
+        }
+    </div>
+</div>
