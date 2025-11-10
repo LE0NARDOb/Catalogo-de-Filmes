@@ -144,3 +144,4 @@ C:\Users\leona\Desktop\faculdade\CatalogoFilmes\obj\Debug\net9.0\refint\Catalogo
 C:\Users\leona\Desktop\faculdade\CatalogoFilmes\obj\Debug\net9.0\CatalogoFilmes.pdb
 C:\Users\leona\Desktop\faculdade\CatalogoFilmes\obj\Debug\net9.0\CatalogoFilmes.genruntimeconfig.cache
 C:\Users\leona\Desktop\faculdade\CatalogoFilmes\obj\Debug\net9.0\ref\CatalogoFilmes.dll
+C:\Users\leona\Desktop\faculdade\CatalogoFilmes\obj\Debug\net9.0\CatalogoFilmes.sourcelink.json

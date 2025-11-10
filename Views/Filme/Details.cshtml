@@ -1,0 +1,55 @@
+@* Esta View recebe UM ÚNICO Filme *@
+@model CatalogoFilmes.Models.Filme
+
+@{
+    ViewData["Title"] = Model.Titulo;
+}
+
+<h1>@Model.Titulo</h1>
+<hr />
+
+<div class="row">
+    @* Coluna da Esquerda (Poster) *@
+    <div class="col-md-4">
+        <img src="@Model.Poster" class="img-fluid rounded" alt="Poster de @Model.Titulo">
+    </div>
+
+    @* Coluna da Direita (Informações) *@
+    <div class="col-md-8">
+        <dl class="row">
+            <dt class="col-sm-3">
+                Título
+            </dt>
+            <dd class="col-sm-9">
+                @Model.Titulo
+            </dd>
+
+            <dt class="col-sm-3">
+                Ano
+            </dt>
+            <dd class="col-sm-9">
+                @Model.AnoLancamento
+            </dd>
+
+            <dt class="col-sm-3">
+                Diretor
+            </dt>
+            <dd class="col-sm-9">
+                @Model.Diretor
+            </dd>
+
+            <dt class="col-sm-3">
+                Sinopse
+            </dt>
+            <dd class="col-sm-9">
+                @Model.Sinopse
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Voltar para a Lista</a>
+</div>

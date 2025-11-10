@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace CatalogoFilmes.Models 
 {
@@ -12,11 +13,11 @@ namespace CatalogoFilmes.Models
         [Display(Name = "Título")]
         [Required(ErrorMessage = "O Título é obrigatório.")]
         [StringLength(100)]
-        public string Titulo { get; set; }
+        public string Titulo { get; set; } = string.Empty; // <-- MUDANÇA AQUI
 
         [Display(Name = "Sinopse")]
         [Required(ErrorMessage = "A Sinopse é obrigatória.")]
-        public string Sinopse { get; set; }
+        public string Sinopse { get; set; } = string.Empty; // <-- MUDANÇA AQUI
 
         [Display(Name = "Ano de Lançamento")]
         [Required(ErrorMessage = "O Ano de Lançamento é obrigatório.")]
@@ -24,7 +25,7 @@ namespace CatalogoFilmes.Models
 
         [Display(Name = "Diretor")]
         [StringLength(100)]
-        public string Diretor { get; set; }
+        public string Diretor { get; set; } = string.Empty; // <-- MUDANÇA AQUI
 
         [StringLength(200)]
         public string? Poster { get; set; } 
